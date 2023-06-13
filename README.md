@@ -1,11 +1,23 @@
-# vite-react-ts-starter
+# Landsec
 
-Vitejs starter using React &amp; Typescript.
+## Installation
 
-Styling done with TailwindCSS (using JIT mode).
+Assumes you already have `node` installed. If you already have `yarn` installed you can skip the next command.
 
-Testing done with Vitest.
+    npm install --global yarn
 
-# Codesandbox
+Install all dependencies for node:
 
-You can also find a codesandbox template of this repo [here](https://codesandbox.io/s/vite-react-typescript-starter-685son)
+    yarn install
+
+## Running
+
+    yarn start
+
+## Building
+
+    yarn build
+
+## Fixing code-style
+
+    yarn fix
