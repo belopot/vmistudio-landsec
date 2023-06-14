@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     color: #212121;
     font-Size: 16px;
-    font-family: "century-gothic";
+    font-family: "LandsecBrownWeb-Regular";
     padding: 0;
     margin: 0;
     overflow-x: hidden;
