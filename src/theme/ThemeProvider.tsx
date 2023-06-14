@@ -70,10 +70,6 @@ const DesktopContainer = styled.div`
   @media ${device.pad} {
     font-size: 0.9em;
   }
-
-  @media (max-width: 768px) {
-    height: auto;
-  }
 `;
 
 type Props = {
