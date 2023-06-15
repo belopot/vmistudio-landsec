@@ -1,5 +1,8 @@
 //Load lazy image
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import 'primeflex/primeflex.css';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 import { ReactNode } from 'react';
 import { isMobile } from 'react-device-detect';

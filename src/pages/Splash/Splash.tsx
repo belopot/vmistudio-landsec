@@ -1,17 +1,28 @@
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { styled } from 'styled-components';
 
 import ArrowImage from '../../assets/arrow-down.svg';
 import LogoImage from '../../assets/logo.svg';
 import BgImage from '../../assets/splash-bg.svg';
-import IconButton from '../../components/IconButton';
 import { device } from '../../theme/device';
 
 export default function Splash() {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+  const navigate = useNavigate();
   return (
-    <Holder>
+    <Holder ref={ref}>
       <Logo src={LogoImage} alt="logo" />
-      <Title>Explore our portfolio</Title>
-      <ArrowButton
+      <Title
+        onClick={() => {
+          navigate('/story');
+        }}
+      >
+        Explore our portfolio
+      </Title>
+      <Arrow
         animate={{
           y: [0, -50, 0],
         }}
@@ -23,7 +34,7 @@ export default function Splash() {
         }}
       >
         <ArrowIcon src={ArrowImage} alt="arrow" />
-      </ArrowButton>
+      </Arrow>
     </Holder>
   );
 }
@@ -57,6 +68,10 @@ const Title = styled.div`
   color: white;
   margin-top: 1em;
   text-transform: uppercase;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
   @media ${device.pad} {
     font-size: 1.5em;
   }
@@ -65,7 +80,10 @@ const Title = styled.div`
   }
 `;
 
-const ArrowButton = styled(IconButton)`
+const Arrow = styled(motion.div)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 7em;
   height: 7em;
   padding: 0.5em;
